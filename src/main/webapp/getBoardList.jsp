@@ -1,25 +1,39 @@
-<%@page contentType="text/html; charset=EUC-KR"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>╠ш ╦Я╥о</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Й╦─ К╙╘К║²</title>
 </head>
 <body>
 	<center>
-		<h1>╠ш ╦Я╥о</h1>
+		<h1>Й╦─ К╙╘К║²</h1>
 		<h3>
-			${user.name}╢т! х╞©╣гу╢о╢ы...<a href="logout.do">Log-out</a>
+			${user.name}К▀≤! М≥≤Л≤│М∙╘К▀┬К▀╓...<a href="logout.do">Log-out</a>
 		</h3>
+		<form action="getBoardList.do" method="post">
+			<table border="1" cellpadding="0" cellspacing="0" width="600">
+				<tr>
+					<td align="right">
+					<select name="searchCondition">
+							<c:forEach items="${conditionMap}" var="option">
+								<option value="${option.value}">${option.key}
+							</c:forEach>
+					</select>
+					<input name="searchKeyword" type="text" />
+					<input type="submit" value="Й╡─Л┐┴" /></td>
+				</tr>
+			</table>
+		</form>
 		<table border="1" cellpadding="0" cellspacing="0" width="700">
 			<tr>
-				<th bgcolor="orange" width="100">╧Ьхё</th>
-				<th bgcolor="orange" width="200">а╕╦Я</th>
-				<th bgcolor="orange" width="150">юш╪╨юз</th>
-				<th bgcolor="orange" width="150">╣Н╥оюо</th>
+				<th bgcolor="orange" width="100">К╡┬М≤╦</th>
+				<th bgcolor="orange" width="200">Л═°К╙╘</th>
+				<th bgcolor="orange" width="150">Л·▒Л└╠Л·░</th>
+				<th bgcolor="orange" width="150">К⌠╠К║²Л²╪</th>
 			</tr>
 			<c:forEach items="${boardList}" var="board">
 			
@@ -33,8 +47,8 @@
 			</c:forEach>
 			
 		</table>
-		<br> <a href="insertBoard.jsp">╩У╠ш ╣Н╥о</a>
-		<a href="changePwdForm.jsp">╬охё╨╞╟Ф</a>
+		<br> <a href="insertBoard.jsp">Л┐┬Й╦─ К⌠╠К║²</a>
+		<a href="changePwdForm.jsp">Л∙■М≤╦КЁ─Й╡╫</a>
 	</center>
 </body>
 </html>
