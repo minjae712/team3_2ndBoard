@@ -12,4 +12,7 @@ public class UserServiceImpl {
 	private UserDAO userDAO;
 	
 	
+	public UserVO getUser(UserVO vo) {
+		return userDAO.getUser(vo);
+	}
 }

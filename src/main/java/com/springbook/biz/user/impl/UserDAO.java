@@ -16,7 +16,14 @@ public class UserDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	
+	//SQL
+	private final String USER_GET = "SELECT * FROM USERS WHERE ID=? AND PASSWORD=?";
 		
 	
+	//기능
+	public UserVO getUser(UserVO vo) {
+		System.out.println("===> Spring JDBC로 getUser() 기능 처리");
+		Object[] args={vo.getId(),vo.getPassword()};
+        return jdbcTemplate.queryForObject(USER_GET, args, new UserRowMapper());
+    }
 }
