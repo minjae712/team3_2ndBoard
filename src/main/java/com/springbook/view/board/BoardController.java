@@ -33,5 +33,10 @@ public class BoardController {
 		return "getBoardList.do";
 	}
 	
-	
+	// 글 등록
+	@RequestMapping(value="/insertBoard.do")
+	public String insertBoard(BoardVO vo) {
+		boardService.insertBoard(vo);
+		return "getBoardList.do";
+	}
 }
