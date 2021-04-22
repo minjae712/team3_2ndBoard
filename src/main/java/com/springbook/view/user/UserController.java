@@ -18,7 +18,7 @@ public class UserController {
 
 	@RequestMapping("/login.do")
 	public String getUser(UserVO vo, HttpSession session) {
-		
+		System.out.println("로그인 처리 완료~");
 		try {
 			
 		UserVO user = userservice.getUser(vo);
@@ -37,6 +37,7 @@ public class UserController {
 	
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
+		System.out.println("로그아웃 처리 완료~");
 		
 		session.invalidate();
 		return "login.jsp";
