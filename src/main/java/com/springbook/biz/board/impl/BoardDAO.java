@@ -22,13 +22,11 @@ public class BoardDAO {
 	
 	// 글 수정
 	public void updateBoard(BoardVO vo) {
-		System.out.println("===> Spring JDBC�� updateBoard() ��� ó��");
 		jdbcTemplate.update(BOARD_UPDATE, vo.getTitle(), vo.getContent(), vo.getSeq());
 	}
 
 	// 글 삭제
 	public void deleteBoard(BoardVO vo) {
-		System.out.println("===> Spring JDBC�� deleteBoard() ��� ó��");
 		jdbcTemplate.update(BOARD_DELETE, vo.getSeq());
 	}
 	
