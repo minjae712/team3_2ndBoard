@@ -18,7 +18,7 @@ public class UserController {
 
 	@RequestMapping("/login.do")
 	public String getUser(UserVO vo, HttpSession session) {
-		System.out.println("·Î±×ÀÎ Ã³¸® ¿Ï·á~");
+		System.out.println("ë¡œê·¸ì¸ ì²˜ë¦¬ ì™„ë£Œ~");
 		try {
 			
 		UserVO user = userservice.getUser(vo);
@@ -37,7 +37,7 @@ public class UserController {
 	
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
-		System.out.println("·Î±×¾Æ¿ô Ã³¸® ¿Ï·á~");
+		System.out.println("ë¡œê·¸ì•„ì›ƒ ì²˜ë¦¬ ì™„ë£Œ~");
 		
 		session.invalidate();
 		return "login.jsp";

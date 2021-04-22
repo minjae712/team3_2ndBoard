@@ -12,7 +12,7 @@ import com.springbook.biz.user.UserVO;
 
 @Repository
 public class UserDAO {
-	//JDBC º¯¼ö
+	//JDBC ë³€ìˆ˜
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -20,9 +20,9 @@ public class UserDAO {
 	private final String USER_GET = "SELECT * FROM USERS WHERE ID=? AND PASSWORD=?";
 		
 	
-	//±â´É
+	//ê¸°ëŠ¥
 	public UserVO getUser(UserVO vo) {
-		System.out.println("===> Spring JDBC·Î getUser() ±â´É Ã³¸®");
+		System.out.println("===> Spring JDBCï¿½ï¿½ getUser() ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½");
 		Object[] args={vo.getId(),vo.getPassword()};
         return jdbcTemplate.queryForObject(USER_GET, args, new UserRowMapper());
     }
