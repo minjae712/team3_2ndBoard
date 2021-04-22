@@ -11,7 +11,6 @@
 		<h1>게시판 프로그램</h1>
 		<h3>${user.id}</h3>
 		<a href="login.jsp">로그인</a>
-		<a href="logout.do">로그아웃</a>
 		<a href="createUser.jsp">회원가입</a>
 		<a href="changePwdForm.jsp">암호변경</a>
 		
