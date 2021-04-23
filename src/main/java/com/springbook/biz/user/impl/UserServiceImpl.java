@@ -15,4 +15,12 @@ public class UserServiceImpl {
 	public UserVO getUser(UserVO vo) {
 		return userDAO.getUser(vo);
 	}
+	
+	public void createUser(UserVO vo) {
+		userDAO.createUser(vo);
+	}
+	
+	public void changePassword(UserVO vo) {
+		userDAO.changePassword(vo);
+	}
 }
