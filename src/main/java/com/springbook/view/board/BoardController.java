@@ -48,6 +48,12 @@ public class BoardController {
 		return "getBoardList.do";
 	}
 	
+	@RequestMapping("/getBoard.do")
+	public String getBoard(BoardVO vo, Model model){
+		model.addAttribute("board", boardService.getBoard(vo));
+		return "getBoard.jsp";
+	}
+	
 	@RequestMapping("/getBoardList.do")
 	public String getBoardList(BoardVO vo, Model model) {
 
