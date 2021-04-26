@@ -20,6 +20,7 @@ public class BoardDAO {
 	private final String BOARD_DELETE = "delete board where seq=?";
 	private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select nvl(max(seq), 0)+1 from board),?,?,?)";	
 	private final String BOARD_GET = "select * from board where seq=?";
+	
 	private final String BOARD_List_T = "select * from board where title like '%' || ? || '%' order by seq desc";
 	private final String BOARD_List_C = "select * from board where content like '%' || ? || '%' order by seq desc";
 	

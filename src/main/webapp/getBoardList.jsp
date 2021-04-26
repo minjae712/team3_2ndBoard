@@ -15,7 +15,7 @@
 			${user.name}님! 환영합니다...<a href="logout.do">Log-out</a>
 		</h3>
 		<form action="getBoardList.do" method="post">
-			<table border="1" cellpadding="0" cellspacing="0" width="600">
+			<table width="600">
 				<tr>
 					<td align="right">
 					<select name="searchCondition">
@@ -28,7 +28,8 @@
 				</tr>
 			</table>
 		</form>
-		<table border="1" cellpadding="0" cellspacing="0" width="700">
+		
+		<table border="1" width="700">
 			<tr>
 				<th bgcolor="orange" width="100">번호</th>
 				<th bgcolor="orange" width="200">제목</th>
@@ -36,14 +37,12 @@
 				<th bgcolor="orange" width="150">등록일</th>
 			</tr>
 			<c:forEach items="${boardList}" var="board">
-			
 			<tr>
 				<td>${board.seq}</td>
 				<td align="left"><a href="getBoard.do?seq=${board.seq}">${board.title}</a></td>
 				<td>${board.writer}</td>
 				<td>${board.regDate}</td>
 			</tr>
-			
 			</c:forEach>
 			
 		</table>
